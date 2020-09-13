@@ -31,10 +31,22 @@
 </template>
 
 <script>
+// import AppVue from '../App.vue'
+import axios from 'axios';
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted() {
+    axios
+      .get('api/weatherForecast')
+      .then(response => (this.info = response))
   }
 }
 </script>
