@@ -1,0 +1,16 @@
+{
+  "name": "coreweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@vue/cli": "^4.5.4",
+    "vue": "^3.0.0-rc.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

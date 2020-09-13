@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consumer", "newSystem\consu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "producer", "newSystem\producer\producer.csproj", "{59383246-1754-49C0-BFE7-4CE772C74FD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coreWeb", "newSystem\coreWeb\coreWeb.csproj", "{5B6B9A69-31DB-4826-A120-15E9FA6E744C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +48,22 @@ Global
 		{59383246-1754-49C0-BFE7-4CE772C74FD7}.Release|x64.Build.0 = Release|Any CPU
 		{59383246-1754-49C0-BFE7-4CE772C74FD7}.Release|x86.ActiveCfg = Release|Any CPU
 		{59383246-1754-49C0-BFE7-4CE772C74FD7}.Release|x86.Build.0 = Release|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Debug|x64.Build.0 = Debug|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Debug|x86.Build.0 = Debug|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Release|x64.ActiveCfg = Release|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Release|x64.Build.0 = Release|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Release|x86.ActiveCfg = Release|Any CPU
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8D73724A-EF47-4EF3-88A3-BA23CDE3AF96} = {F63140F7-5A05-47C5-934C-120A11C78FA0}
 		{59383246-1754-49C0-BFE7-4CE772C74FD7} = {F63140F7-5A05-47C5-934C-120A11C78FA0}
+		{5B6B9A69-31DB-4826-A120-15E9FA6E744C} = {F63140F7-5A05-47C5-934C-120A11C78FA0}
 	EndGlobalSection
 EndGlobal
