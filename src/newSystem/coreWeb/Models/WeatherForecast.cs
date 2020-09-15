@@ -1,6 +1,6 @@
 using System;
 
-namespace coreWeb.Model
+namespace coreWeb.Models
 {
     public class WeatherForecast
     {
