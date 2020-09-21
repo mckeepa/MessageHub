@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using System.Threading;
     using Confluent.Kafka;
@@ -34,7 +35,14 @@
                         try 
                         {
                             var cr = consumer.Consume(cts.Token);
+
+                            foreach (IHeader header in cr.Message.Headers)
+                            {
+                                Console.WriteLine(header.Key + ":" + header.GetValueBytes());
+                            }
+                            
                             Console.WriteLine(cr.Message.Value);
+                            
                         }
                         catch ( ConsumeException e)
                         {

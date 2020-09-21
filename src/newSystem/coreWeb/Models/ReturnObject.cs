@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace coreWeb.Model
+namespace coreWeb.Models
 {
     public class ReturnObject<T>
     {
