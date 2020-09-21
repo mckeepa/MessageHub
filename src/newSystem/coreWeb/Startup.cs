@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using coreWeb.Models;
+using Microsoft.OpenApi.Models;
 
 namespace coreWeb
 {
@@ -46,7 +47,30 @@ namespace coreWeb
                                                         .AllowAnyMethod();
                                 });
             });
-            
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "New Core Web Application",
+                    Description = "A simple Web Application to drive the Prodcuer / Consumer pattern",
+                    TermsOfService = new Uri("https://todo.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Paul McKee",
+                        Email = "Paul.McKee.aus@gmail.com",
+                        Url = new Uri("https://twitter.com/paulmckee"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under LICX",
+                        Url = new Uri("https://todo.com/license"),
+                    }
+                });
+            });
+
             services.AddControllers();
         }
 
@@ -57,6 +81,16 @@ namespace coreWeb
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core Web App V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
             app.UseRouting();

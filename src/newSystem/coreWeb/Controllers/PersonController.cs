@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using coreWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 
@@ -60,5 +61,70 @@ namespace coreWeb.Controllers
                 data =_context.Persons.ToList()
             };
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id){
+            var person = await _context.Persons.FindAsync(id);
+
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            _context.Persons.Remove(person);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+
+    [HttpPost]
+    public async Task<ActionResult<Person>> CreatePerson(Person person)
+    {
+        var per = new Person
+        {
+            DateOfBirth = person.DateOfBirth,
+            GivenName1 = person.GivenName1
+        };
+
+        _context.Persons.Add(per);
+        await _context.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(Get), new { id = per.PersonId }, person);
+    }
+
+
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(Guid id, Models.Person person )
+        {
+
+            Models.Person returnPerson;
+            try
+            {
+                var dbPerson = _context.Persons.Where(per=> per.PersonId.Equals(id)).SingleOrDefault();
+                dbPerson.DateOfBirth = person.DateOfBirth;
+                dbPerson.GivenName1 = person.GivenName1;
+                dbPerson.GivenName2 = person.GivenName2;
+                dbPerson.GivenName3 = person.GivenName3;
+                dbPerson.FamilyName = person.FamilyName;
+                dbPerson.Alerts = person.Alerts;
+                
+                //Set the retrun object
+                returnPerson = dbPerson;
+            }            
+            catch {  
+                // _context.Entry(person).State = EntityState.Modified;
+                _context.Persons.Add(person);
+
+                //Set the retrun object
+                returnPerson = person;
+            };
+         
+            await _context.SaveChangesAsync();          
+            return CreatedAtAction(nameof(Get), new { id = person.PersonId }, person);
+        }
+
+         private bool PersonExists(Guid id) => 
+            _context.Persons.Any(e => e.PersonId == id);
     }
 }
