@@ -8,7 +8,7 @@ node_modules/
 
 
 # Visual Studio Code
-.vscode
+#.vscode
 
 # Rider
 .idea

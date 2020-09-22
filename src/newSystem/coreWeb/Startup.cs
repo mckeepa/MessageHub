@@ -55,8 +55,8 @@ namespace coreWeb
                 {
                     Version = "v1",
                     Title = "New Core Web Application",
-                    Description = "A simple Web Application to drive the Prodcuer / Consumer pattern",
-                    TermsOfService = new Uri("https://todo.com/terms"),
+                    Description = "A simple Web Application to drive the Prodcuer / Consumer pattern .... ",
+                    TermsOfService = new Uri("https://github.com/mckeepa/MessageHub"),
                     Contact = new OpenApiContact
                     {
                         Name = "Paul McKee",
@@ -65,8 +65,8 @@ namespace coreWeb
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Use under LICX",
-                        Url = new Uri("https://todo.com/license"),
+                        Name = "Use under LICX in Github Repository",
+                        Url = new Uri("https://github.com/mckeepa/MessageHub"),
                     }
                 });
             });
